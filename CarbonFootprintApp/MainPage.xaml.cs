@@ -16,6 +16,7 @@ namespace CarbonFootprintApp
         public MainPage()
         {
             InitializeComponent();
+            picker.ItemsSource = new List<string>() { "hello", "goodbye" };
         }
     }
 }

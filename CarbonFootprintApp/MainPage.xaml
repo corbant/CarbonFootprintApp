@@ -6,11 +6,57 @@
              mc:Ignorable="d"
              x:Class="CarbonFootprintApp.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Number of people in house" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
+
+
+                <Picker x:Name="picker" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Zip Code" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
+
+                <Entry Placeholder="zipcode" PlaceholderColor="LightGray" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="1" Keyboard="Numeric"/>
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Input stuff here" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
+
+                <Entry Placeholder="Input" PlaceholderColor="LightGray" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="1"/>
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Input stuff here" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
+
+                <Entry Placeholder="Input" PlaceholderColor="LightGray" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="1"/>
+
+            </Grid>
+
+
+
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
