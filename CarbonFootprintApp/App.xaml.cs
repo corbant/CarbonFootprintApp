@@ -10,7 +10,7 @@ namespace CarbonFootprintApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new WeeklyInputPage();
 
             /*TODO: make first time page appear if its the first time
             
