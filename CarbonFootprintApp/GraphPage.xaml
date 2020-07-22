@@ -9,7 +9,9 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <forms:ChartView x:Name="chart" HeightRequest="500"/>
+            <Label Text="Here's how your carbon footprint has changed over time" FontSize="Header"/>
+
+            <forms:ChartView x:Name="chart" HeightRequest="200"/>
             
         </StackLayout>
     </ContentPage.Content>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CarbonFootprintApp
@@ -17,6 +18,14 @@ namespace CarbonFootprintApp
         {
             InitializeComponent();
             picker.ItemsSource = new List<string>() { "hello", "goodbye" };
+
+            if(Preferences.Get("first time", true))
+            {
+                Navigation.PushModalAsync(new FirstTimePage());
+                Preferences.Set("first time", false);
+            }
         }
+
+
     }
 }

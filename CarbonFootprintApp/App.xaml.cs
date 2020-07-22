@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace CarbonFootprintApp
 {
@@ -10,7 +11,12 @@ namespace CarbonFootprintApp
         {
             InitializeComponent();
 
-            MainPage = new WeeklyInputPage();
+            if(!Preferences.ContainsKey("vehicleMPG") || !Preferences.ContainsKey("zipcode") || !Preferences.ContainsKey("numPeople"))
+            {
+                Preferences.Set("first time", true);
+            }
+
+            MainPage = new NavigationPage(new WeeklyInputPage());
 
             /*TODO: make first time page appear if its the first time
             

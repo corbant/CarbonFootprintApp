@@ -15,10 +15,6 @@ namespace CarbonFootprintApp
         public FirstTimePage()
         {
             InitializeComponent();
-
-            naturalGasPicker.ItemsSource = yesno;
         }
-
-        List<string> yesno = new List<String>() { "yes", "no" };
     }
 }
