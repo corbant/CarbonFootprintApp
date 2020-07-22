@@ -20,7 +20,8 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Text="Natural Gas?" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
-                <Picker x:Name="naturalGasPicker" Title="Select an option" Grid.Column="1"/>
+                <Entry Text="{Binding Zipcode}"/>
+                <Button Command="{Binding SubmitCommand}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

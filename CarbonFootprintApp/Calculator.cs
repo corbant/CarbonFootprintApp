@@ -35,7 +35,7 @@ namespace CarbonFootprintApp
             return emissionRate;
         }
 
-        public static int calculateCarbonFootprint(int milesDriven, int naturalGasBill, int electricityBill, int fuelOilBill, int propaneBill, string[] recycleables)
+        public static int calculateCarbonFootprint(int milesDriven, double naturalGasBill, double electricityBill, double fuelOilBill, double propaneBill, string[] recycleables)
         {
             double carbonFootprint = 0;
             int numPeople = Preferences.Get("numPeople", 3);

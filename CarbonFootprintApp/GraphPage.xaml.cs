@@ -9,6 +9,9 @@ using Xamarin.Forms.Xaml;
 using Microcharts;
 using Entry = Microcharts.Entry;
 using SkiaSharp;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Xamarin.Essentials;
 
 namespace CarbonFootprintApp
 {
@@ -38,6 +41,7 @@ namespace CarbonFootprintApp
         public GraphPage()
         {
             InitializeComponent();
+            entries = JObject.Parse(Preferences.Get("entries", "null")).ToObject<List<Entry>>();
             chart.Chart = new LineChart() { Entries = entries };
         }
     }

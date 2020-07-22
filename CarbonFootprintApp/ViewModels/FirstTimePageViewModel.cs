@@ -67,6 +67,6 @@ namespace CarbonFootprintApp.ViewModels
 
 
 
-        Command SubmitCommand { get; }
+        public Command SubmitCommand { get; }
     }
 }
