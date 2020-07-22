@@ -18,26 +18,7 @@ namespace CarbonFootprintApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GraphPage : ContentPage
     {
-
-        List<Entry> entries = new List<Entry>() {
-            new Entry(10) {
-                Label = "5/2/20",
-                Color = SKColor.Parse("#ebe834"),
-                ValueLabel = "10"
-            },
-            new Entry(8)
-            {
-                Label = "5/9/20",
-                Color = SKColor.Parse("#34c3eb"),
-                ValueLabel = "8"
-            },
-            new Entry(7)
-            {
-                Label = "5/16/20",
-                Color = SKColor.Parse("#eb34cc"),
-                ValueLabel = "7"
-            }
-        };
+        List<Entry> entries;
         public GraphPage()
         {
             InitializeComponent();

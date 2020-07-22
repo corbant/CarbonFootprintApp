@@ -50,19 +50,19 @@
 
                     <Entry Text="{Binding Zipcode}"
                        Placeholder="Zipcode:" PlaceholderColor="lightblue"
-                       VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" WidthRequest="100"/>
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" WidthRequest="100" Keyboard="Numeric"/>
 
                     <Label Text="Vehicle Fuel Economy:" Padding="10, 0, 0, 0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="0"/>
 
                     <Entry Text="{Binding vehicleMPG}"
                        Placeholder="MPG" PlaceholderColor="lightblue"
-                       VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" WidthRequest="100"/>
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" WidthRequest="100" Keyboard="Numeric"/>
 
                     <Label Text="Number of People in Your Household" Padding="10, 0, 0, 0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="0"/>
 
                     <Entry Text="{Binding numPeople}"
                        Placeholder="Residents" PlaceholderColor="lightblue"
-                       VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" WidthRequest="100"/>
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" WidthRequest="100" Keyboard="Numeric"/>
                 </Grid>
                 <Grid BackgroundColor="LightGreen" Grid.Row="2" Margin="0">
                     <Grid.ColumnDefinitions>
@@ -70,7 +70,7 @@
                         <ColumnDefinition Width="40*"/>
                         <ColumnDefinition Width="30*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="1" Padding="5" Text="Submit" Command="{Binding SubmitCommand}"/>
+                    <Button Grid.Column="1" Padding="5" Text="Submit" Command="{Binding SubmitCommand}" Clicked="Button_Clicked"/>
                 </Grid>
             </Grid>
 
