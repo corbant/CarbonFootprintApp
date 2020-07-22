@@ -56,13 +56,13 @@
 
                     <Label Text="Vehicle Fuel Economy:" Padding="10, 0, 0, 0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="0"/>
 
-                    <Entry Text="{Binding vehicleMPG}"
+                    <Entry Text="{Binding VehicleMPG}"
                        Placeholder="MPG" PlaceholderColor="lightblue"
                        VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" WidthRequest="100" Keyboard="Numeric"/>
 
                     <Label Text="Number of People in Your Household" Padding="10, 0, 0, 0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="0"/>
 
-                    <Entry Text="{Binding numPeople}"
+                    <Entry Text="{Binding NumPeople}"
                        Placeholder="Residents" PlaceholderColor="lightblue"
                        VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" WidthRequest="100" Keyboard="Numeric"/>
                 </Grid>

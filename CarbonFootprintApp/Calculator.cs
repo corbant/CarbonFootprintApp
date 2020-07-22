@@ -72,11 +72,11 @@ namespace CarbonFootprintApp
             /* waste calculation
              * (number of people in house * average_waste_emissions) - (number of people in house * avoided emmisions for each type)*/
             carbonFootprint += numPeople * getValue(values, "average_waste_emissions");
-            if (recycleables.Contains("cans")) { carbonFootprint += numPeople * getValue(values, "metal_recycling_avoided_emissions"); }
-            if(recycleables.Contains("plastic")) { carbonFootprint += numPeople * getValue(values, "plastic_recycling_avoided_emissions"); }
-            if (recycleables.Contains("glass")) { carbonFootprint += numPeople * getValue(values, "glass_recycling_avoided_emissions"); }
-            if (recycleables.Contains("newspaper")) { carbonFootprint += numPeople * getValue(values, "newspaper_recycling_avoided_emissions"); }
-            if (recycleables.Contains("magazine")) { carbonFootprint += numPeople * getValue(values, "mag_recycling_avoided_emissions"); }
+            if (recycleables.Contains("Cans")) { carbonFootprint += numPeople * getValue(values, "metal_recycling_avoided_emissions"); }
+            if(recycleables.Contains("Plastic")) { carbonFootprint += numPeople * getValue(values, "plastic_recycling_avoided_emissions"); }
+            if (recycleables.Contains("Glass")) { carbonFootprint += numPeople * getValue(values, "glass_recycling_avoided_emissions"); }
+            if (recycleables.Contains("Newspapers")) { carbonFootprint += numPeople * getValue(values, "newspaper_recycling_avoided_emissions"); }
+            if (recycleables.Contains("Magazines")) { carbonFootprint += numPeople * getValue(values, "mag_recycling_avoided_emissions"); }
 
 
             /* carbon footprint = sum of all*/

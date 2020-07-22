@@ -8,24 +8,34 @@ using Microcharts;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SkiaSharp;
+using System.Collections.ObjectModel;
+using System.Linq;
+using Xamarin.Forms.Internals;
 
 namespace CarbonFootprintApp.ViewModels
 {
-    class WeeklyInputPageViewModel : INotifyPropertyChanged
+    public class WeeklyInputPageViewModel : INotifyPropertyChanged
     {
         int milesDriven;
         double naturalGasBill;
         double electricityBill;
         double fuelOilBill;
         double propaneBill;
-        string[] recycleables;
 
-        WeeklyInputPageViewModel()
+        public WeeklyInputPageViewModel()
         {
             SubmitCommand = new Command(() =>
             {
-                int carbonFootprint = Calculator.calculateCarbonFootprint(MilesDriven, NaturalGasBill, ElectricityBill, FuelOilBill, PropaneBill, Recycleables);
-                List<Microcharts.Entry> entries = JObject.Parse(Preferences.Get("entries", "null")).ToObject<List<Microcharts.Entry>>();
+                int carbonFootprint = Calculator.calculateCarbonFootprint(MilesDriven, NaturalGasBill, ElectricityBill, FuelOilBill, PropaneBill, new string[1]);
+                List<Microcharts.Entry> entries;
+                if (!Preferences.ContainsKey("entries"))
+                {
+                    entries = new List<Microcharts.Entry>();
+                }
+                else
+                {
+                    entries = JObject.Parse(Preferences.Get("entries", "null")).ToObject<List<Microcharts.Entry>>();
+                }
                 entries.Add(new Microcharts.Entry(carbonFootprint)
                 {
                     Label = DateTime.Now.Date.ToString(),
@@ -104,20 +114,43 @@ namespace CarbonFootprintApp.ViewModels
             }
         }
 
-        public string[] Recycleables
+        //recycling stuff
+
+        public IEnumerable<string> Recycleables
         {
-            get => recycleables;
-            set
+            get
             {
-                recycleables = value;
-
-                var args = new PropertyChangedEventArgs(nameof(Recycleables));
-
-                PropertyChanged?.Invoke(this, args);
+                return new List<string>() {
+                    "Cans", "Plastic", "Glass", "Newspapers", "Magazines"
+                };
             }
         }
+        
+
+        ObservableCollection<object> selectedRecycling;
+
+        public ObservableCollection<object> SelectedRecycling
+        {
+            get => selectedRecycling;
+            set
+            {
+                if(selectedRecycling != value)
+                {
+                    selectedRecycling = value;
+                }
+            }
+        }
+
+        
 
         public Command SubmitCommand { get; }
 
     }
+
+    public class Recycleable
+    {
+        public string Name { get; set; }
+    }
+
+    
 }

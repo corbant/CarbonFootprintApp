@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,6 @@ namespace CarbonFootprintApp
         public WeeklyInputPage()
         {
             InitializeComponent();
-            picker.ItemsSource = new List<string>() { "hello", "goodbye" };
 
             if(Preferences.Get("first time", true))
             {
