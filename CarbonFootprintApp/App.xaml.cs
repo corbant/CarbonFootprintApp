@@ -16,7 +16,7 @@ namespace CarbonFootprintApp
                 Preferences.Set("first time", true);
             }
 
-            MainPage = new NavigationPage(new WeeklyInputPage());
+            MainPage = new NavigationPage(new FirstTimePage());
         }
 
         protected override void OnStart()

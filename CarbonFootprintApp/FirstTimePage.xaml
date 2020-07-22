@@ -34,8 +34,9 @@
                     <RowDefinition Height="10*" />
                 </Grid.RowDefinitions>
 
+                <Image Opacity="0.75"  Grid.RowSpan="3" HeightRequest="1000" Source="https://lh3.googleusercontent.com/proxy/XARQLHYRwEs_Lgt_ave4566ii5ooxDszV2FvL3uzIJCvRjsIsC7HMNAum1pwsFU30P8pwffLH4lENH6cqN8yFq38QpN7HMY" HorizontalOptions="CenterAndExpand" Grid.ColumnSpan="1"/>
 
-                <Grid Grid.Row="0" BackgroundColor="lightgreen" Margin="0" HeightRequest="1000" HorizontalOptions="CenterAndExpand" WidthRequest="2000">
+                <Grid Grid.Row="0"  Margin="0" HeightRequest="1000" HorizontalOptions="CenterAndExpand" WidthRequest="2000">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100*"/>
                     </Grid.ColumnDefinitions>
