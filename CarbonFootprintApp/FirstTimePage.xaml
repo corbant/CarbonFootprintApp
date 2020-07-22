@@ -27,20 +27,21 @@
 
                 </ResourceDictionary>
             </StackLayout.Resources>-->
-            <Grid Padding="0">
+            <Grid Padding="0" BackgroundColor="#8090EE90" x:Name="Background">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20*" />
-                    <RowDefinition Height="60*" />
-                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="10*" />
+                    <RowDefinition Height="80*" />
+                    <RowDefinition Height="10*" />
                 </Grid.RowDefinitions>
 
-                <Grid BackgroundColor="LightGreen" Grid.Row="0" Margin="0">
+
+                <Grid Grid.Row="0" BackgroundColor="lightgreen" Margin="0" HeightRequest="1000" HorizontalOptions="CenterAndExpand" WidthRequest="2000">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="First-Time Inputs" TextColor="Black" WidthRequest="1000" BackgroundColor="lightgreen" Margin="0" FontSize="14" HorizontalOptions="CenterAndExpand" Padding="10" ></Label>
+                    <Label Text="First-Time Inputs" TextColor="Black" WidthRequest="1000" Margin="0" FontSize="14" HorizontalOptions="CenterAndExpand" Padding="10" ></Label>
                 </Grid>
-                <Grid Padding="10" Margin="0" BackgroundColor="blue" Grid.Row="1" >
+                <Grid Padding="10" Margin="0"  Grid.Row="1" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50*"/>
                         <ColumnDefinition Width="50*"/>

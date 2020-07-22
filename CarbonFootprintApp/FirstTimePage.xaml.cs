@@ -12,8 +12,11 @@ namespace CarbonFootprintApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FirstTimePage : ContentPage
     {
+
+        
         public FirstTimePage()
         {
+            
             InitializeComponent();
         }
     }
