@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
+using Microcharts;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SkiaSharp;
 
 namespace CarbonFootprintApp.ViewModels
 {
@@ -17,7 +22,19 @@ namespace CarbonFootprintApp.ViewModels
 
         WeeklyInputPageViewModel()
         {
-
+            SubmitCommand = new Command(() =>
+            {
+                int carbonFootprint = Calculator.calculateCarbonFootprint(MilesDriven, NaturalGasBill, ElectricityBill, FuelOilBill, PropaneBill, Recycleables);
+                List<Microcharts.Entry> entries = JObject.Parse(Preferences.Get("entries", "null")).ToObject<List<Microcharts.Entry>>();
+                entries.Add(new Microcharts.Entry(carbonFootprint)
+                {
+                    Label = DateTime.Now.Date.ToString(),
+                    ValueLabel = carbonFootprint.ToString(),
+                    Color = SKColors.Blue,
+                    TextColor = SKColors.Black
+                });
+                Preferences.Set("entries", JsonConvert.SerializeObject(entries));
+            });
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -87,7 +104,20 @@ namespace CarbonFootprintApp.ViewModels
             }
         }
 
-        public Command SubmitButton;
+        public string[] Recycleables
+        {
+            get => recycleables;
+            set
+            {
+                recycleables = value;
+
+                var args = new PropertyChangedEventArgs(nameof(Recycleables));
+
+                PropertyChanged?.Invoke(this, args);
+            }
+        }
+
+        public Command SubmitCommand { get; }
 
     }
 }

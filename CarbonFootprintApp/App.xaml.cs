@@ -16,15 +16,7 @@ namespace CarbonFootprintApp
                 Preferences.Set("first time", true);
             }
 
-            MainPage = new NavigationPage(new FirstTimePage());
-
-            /*TODO: make first time page appear if its the first time
-            
-            Application.Current.Properties["first time"] = true;
-            if (Application.Current.Properties.ContainsKey("first time") && (bool) Application.Current.Properties["first time"])
-            {
-                Page firstTimePage = new FirstTimePage();
-            }*/
+            MainPage = new NavigationPage(new WeeklyInputPage());
         }
 
         protected override void OnStart()

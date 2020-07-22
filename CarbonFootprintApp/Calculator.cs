@@ -59,7 +59,7 @@ namespace CarbonFootprintApp
 
             /* electricity calculation
              * (bill amount / cost_per_kWh) )* e_factor_value / weeks in a month */
-            carbonFootprint += electricityBill / getValue(values, "cost_per_kWh") * getValue(values, "e_factor_value") / 4;
+            carbonFootprint += electricityBill / getValue(values, "cost_per_kWh") * getAreaEmission(Preferences.Get("zipcode", 00002)) /1000 / 4;
 
             /* fuel oil calculation
              * (bill amount / fuel_oil_cost) * EF_fuel_oil_gallon / weeks in a month */
