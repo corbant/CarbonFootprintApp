@@ -3,56 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:CarbonFootprintApp.ViewModels"
              mc:Ignorable="d"
              x:Class="CarbonFootprintApp.WeeklyInputPage">
 
+    <ContentPage.BindingContext>
+        <local:WeeklyInputPageViewModel/>
+    </ContentPage.BindingContext>
+
     <ScrollView>
         <StackLayout>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
-                <Label Text="Number of people in house" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
+            <!-- For recycleables, use a <CollectionView> and bind the items source and selected items to the view model-->
 
-
-                <Picker x:Name="picker" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="1"/>
-
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Label Text="Zip Code" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
-
-                <Entry Placeholder="zipcode" PlaceholderColor="LightGray" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="1" Keyboard="Numeric"/>
-
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Label Text="Input stuff here" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
-
-                <Entry Placeholder="Input" PlaceholderColor="LightGray" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="1"/>
-
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <Label Text="Input stuff here" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="0"/>
-
-                <Entry Placeholder="Input" PlaceholderColor="LightGray" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Column="1"/>
-
-            </Grid>
+            <CollectionView HorizontalOptions="Center" VerticalOptions="Center"  ItemsSource="{Binding Recycleables}" SelectionMode="Multiple" SelectedItems="{Binding SelectedRecycling}" />
 
 
 

@@ -7,7 +7,7 @@ using Xamarin.Essentials;
 
 namespace CarbonFootprintApp.ViewModels
 {
-    class FirstTimePageViewModel : INotifyPropertyChanged
+    public class FirstTimePageViewModel : INotifyPropertyChanged
     {
 
         double vehicleMPG;
