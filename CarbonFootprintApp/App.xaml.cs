@@ -14,9 +14,11 @@ namespace CarbonFootprintApp
             if(!Preferences.ContainsKey("vehicleMPG") || !Preferences.ContainsKey("zipcode") || !Preferences.ContainsKey("numPeople"))
             {
                 Preferences.Set("first time", true);
+                MainPage = new NavigationPage(new FirstTimePage());
             }
+            MainPage = new NavigationPage(new FirstTimePage());
 
-            MainPage = new NavigationPage(new WeeklyInputPage());
+
         }
 
         protected override void OnStart()

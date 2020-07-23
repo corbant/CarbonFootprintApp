@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
-using Xamarin.Forms;
 using Xamarin.Essentials;
+using Xamarin.Forms;
+using Microcharts;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SkiaSharp;
+using System.Collections.ObjectModel;
+using System.Linq;
+using Xamarin.Forms.Internals;
 
 namespace CarbonFootprintApp.ViewModels
 {
@@ -65,6 +72,35 @@ namespace CarbonFootprintApp.ViewModels
             }
         }
 
+        public IEnumerable<string> Recycleables
+        {
+            get
+            {
+                return new List<string>() {
+                    "Cans", "Plastic", "Glass", "Newspapers", "Magazines"
+                };
+            }
+        }
+
+
+        ObservableCollection<object> selectedRecycling;
+
+        public ObservableCollection<object> SelectedRecycling
+        {
+            get => selectedRecycling;
+            set
+            {
+                if (selectedRecycling != value)
+                {
+                    selectedRecycling = value;
+                }
+            }
+        }
+
+        public class Recycleable
+        {
+            public string Name { get; set; }
+        }
 
 
         public Command SubmitCommand { get; }

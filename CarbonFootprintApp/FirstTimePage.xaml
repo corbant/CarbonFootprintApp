@@ -29,29 +29,52 @@
                     </Grid.ColumnDefinitions>
                     <Label Text="First-Time Inputs" TextColor="Black" WidthRequest="1000" Margin="0" FontSize="14" HorizontalTextAlignment="Center" Padding="10" ></Label>
                 </Grid>
-                <Grid Padding="10" Margin="0"  Grid.Row="1" >
+                <Grid Padding="10" Margin="0"  Grid.Row="1" RowSpacing="10" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50*"/>
                         <ColumnDefinition Width="50*"/>
                     </Grid.ColumnDefinitions>
-                    <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" Source="https://i.pinimg.com/originals/b4/af/bb/b4afbb832cf50f227143e4cdebd50376.png" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2" />
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="60*"/>
+                    </Grid.RowDefinitions>
+                    <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" Source="https://i.pinimg.com/originals/b4/af/bb/b4afbb832cf50f227143e4cdebd50376.png" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="2" />
                     <Label Text="Zipcode:" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Padding="10, 0, 0, 0" Grid.Row="0" Grid.Column="0"/>
 
                     <Entry Text="{Binding Zipcode}"
-                       Placeholder="Zipcode:" PlaceholderColor="lightblue"
+                       Placeholder="Zipcode:" PlaceholderColor="lightblue" Margin="5"
                        VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" WidthRequest="100" Keyboard="Numeric"/>
 
                     <Label Text="Vehicle Fuel Economy:" Padding="10, 0, 0, 0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Row="1" Grid.Column="0"/>
 
                     <Entry Text="{Binding VehicleMPG}"
                        Placeholder="MPG" PlaceholderColor="lightblue"
-                       VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" WidthRequest="100" Keyboard="Numeric"/>
+                       VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" WidthRequest="100" Keyboard="Numeric" Margin="5" />
 
                     <Label Text="Number of People in Your Household" Padding="10, 0, 0, 0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Row="2" Grid.Column="0"/>
 
                     <Entry Text="{Binding NumPeople}"
-                       Placeholder="Residents" PlaceholderColor="lightblue"
+                       Placeholder="Residents" PlaceholderColor="lightblue" Margin="5"
                        VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" WidthRequest="100" Keyboard="Numeric"/>
+                    <Label Text="Natural Gas Heating" Padding="10, 0, 0, 0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Grid.Row="3" Grid.Column="0"></Label>
+
+                    <Picker VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="3" Grid.Column="1" WidthRequest="100" Opacity="1" Margin="5">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Yes</x:String>
+                                <x:String>No</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    
+
+                    <Label Text="Items Recycled" Padding="10, 0, 0, 0" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Grid.Row="4" Grid.Column="0"/>
+
+                    <CollectionView HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"  ItemsSource="{Binding Recycleables}" SelectionMode="Multiple" SelectedItems="{Binding SelectedRecycling}" Grid.Row="4" Grid.Column="1"/>
+                    
                 </Grid>
                 <Grid BackgroundColor="LightGreen" Grid.Row="2" Margin="0">
                     <Grid.ColumnDefinitions>
