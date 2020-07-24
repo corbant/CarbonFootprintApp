@@ -26,7 +26,7 @@ namespace CarbonFootprintApp.ViewModels
         {
             SubmitCommand = new Command(() =>
             {
-                int carbonFootprint = Calculator.calculateCarbonFootprint(MilesDriven, NaturalGasBill, ElectricityBill, FuelOilBill, PropaneBill, new string[1]);
+                int carbonFootprint = Calculator.calculateCarbonFootprint(MilesDriven, NaturalGasBill, ElectricityBill, FuelOilBill, PropaneBill, new string[5]);
                 List<Microcharts.Entry> entries;
                 if (!Preferences.ContainsKey("entries"))
                 {
@@ -127,9 +127,9 @@ namespace CarbonFootprintApp.ViewModels
         }
         
 
-        ObservableCollection<object> selectedRecycling;
+        ObservableCollection<string> selectedRecycling;
 
-        public ObservableCollection<object> SelectedRecycling
+        public ObservableCollection<string> SelectedRecycling
         {
             get => selectedRecycling;
             set

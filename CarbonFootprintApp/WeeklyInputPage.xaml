@@ -14,9 +14,7 @@
     <ScrollView>
         <StackLayout>
 
-            <!-- For recycleables, use a <CollectionView> and bind the items source and selected items to the view model-->
-
-            <CollectionView HorizontalOptions="Center" VerticalOptions="Center"  ItemsSource="{Binding Recycleables}" SelectionMode="Multiple" SelectedItems="{Binding SelectedRecycling}" />
+            
 
 
 
